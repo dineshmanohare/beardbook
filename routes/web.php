@@ -79,10 +79,10 @@
 // Route::get('/posts/{post}','PostController@show');
 //  FIFTH VIDEO TUTORIAL
 
-Route::get('/posts/{post}','PostController@show');
-// Route::get('/bookinfo','BookController@show');
+// Route::get('/posts/{post}','PostController@show');
+Route::get('/bookinfo','BookController@show');
 
-
+Route::get('/books', 'BookController@index');
 
 
 
