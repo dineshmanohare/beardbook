@@ -13,7 +13,8 @@
     
 {{-- <p>{{$post}}</p> --}}
 @foreach ($books as $book)
-<h1>{{$book->id}}   :  {{$book->book_name}}  :  {{$book->book_price}} : {{$book->auther_name}}</h1>
+<h1>   {{$book->name}}   {{$book->price}} {{$book->author}}</h1>
+<img src="/storage/{{ $book->cover }}" width="100">
 @endforeach
 
 

@@ -83,6 +83,9 @@
 Route::get('/bookinfo','BookController@show');
 
 Route::get('/books', 'BookController@index');
+Route::get('/books/addbookform', 'BookController@showuploadform')->middleware('auth');
+Route::post('/books/addbookform', 'BookController@storedata')->middleware('auth');
+
 
 
 
@@ -114,3 +117,11 @@ Route::get('/books', 'BookController@index');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

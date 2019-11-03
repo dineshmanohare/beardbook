@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Book;
 use App\Http\Resources\BookResource;
+use Illuminate\Support\Facades\Storage;
 
 class BookController extends Controller
 {
@@ -67,5 +68,38 @@ class BookController extends Controller
     );
 
     }
+     public function showuploadform()
+     {
+         return view('upload');
+     }
+     public function storedata(Request $request)
+     {
+        //  return  $request->all();
+
+        $this->validate($request, [
+            'name' => 'required',
+            'price' => 'required',
+            'author' => 'required',
+            'cover' => 'required',
+        ]);
+
+        $hashname = $request->cover->hashName();
+        Storage::disk('public')->put('/bookcovers', $request->file('cover'));
+
+        Book::create([
+            'name' => $request->input('name'),
+            'price' => $request->input('price'),
+            'author' => $request->input('author'),
+            'cover' => 'bookcovers/' . $hashname,
+       ]);
+
+       return back();
+
+    //    $book = new Book();
+    //    $book->name = $request->input('name');
+    //    $book->bookprice = $request->input('bookprice');
+    //    $book->author = $request->input('author');
+    //    $book->save();
+     }
 
 }
