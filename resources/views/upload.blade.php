@@ -43,6 +43,30 @@
                     @enderror
                         </td>
                     </tr>
+                    <tr>
+
+                        <td>year:</td>
+                        <td>
+                            <input type="text" name="year">
+    
+                            @error('year')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>branch:</td>
+                        <td>
+                            <input type="text" name="branch">
+    
+                            @error('branch')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        
+                        </td>
+                    </tr>
             
                 <tr>
                     <td>Add Image:</td>

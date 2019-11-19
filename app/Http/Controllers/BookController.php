@@ -80,6 +80,8 @@ class BookController extends Controller
             'name' => 'required',
             'price' => 'required',
             'author' => 'required',
+            'year' => 'required',
+            'branch' => 'required',
             'cover' => 'required',
         ]);
 
@@ -90,6 +92,8 @@ class BookController extends Controller
             'name' => $request->input('name'),
             'price' => $request->input('price'),
             'author' => $request->input('author'),
+            'year' => $request->input('year'),
+            'branch' => $request->input('branch'),
             'cover' => 'bookcovers/' . $hashname,
        ]);
 

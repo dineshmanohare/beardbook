@@ -18,6 +18,8 @@ class CreateBooksTable extends Migration
             $table->string('name');
             $table->string('price');
             $table->string('author');
+            $table->string('year');
+            $table->string('branch');
             $table->string('cover')->nullable();
 
             $table->timestamps();
